@@ -16,6 +16,11 @@ export default {
   },
   components: {
     
+  },
+  created(){
+    this.$axios.get("/venue/types").then(res=>{
+        console.log(res);
+    });
   }
 }
 </script>

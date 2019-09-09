@@ -1,46 +1,21 @@
 <template>
   <div id="index-wrap">
-    <div class="content">
-      <router-view></router-view>
-    </div>
-    <div class="nav-bot">
-      <van-grid clickable :column-num="4">
-        <van-grid-item
-          class="item ac"
-          icon="wap-home"
-          text="场馆"
-          to="/"
-        />
-        <van-grid-item
-          class="item"
-          icon="shop-o"
-          text="活动"
-          to="/ActivePage"
-        />
-        <van-grid-item
-          class="item"
-          icon="shopping-cart-o"
-          text="发现"
-          to="/FindPage"
-        />
-        <van-grid-item
-          class="item"
-          icon="manager-o"
-          text="我的"
-          to="/UserPage"
-        />
-      </van-grid>
-    </div>
+    <router-view  class="content-wrap"></router-view>
+    <ul class="nav-wrap">
+      <router-link class="item ac" tag="li" to="/"><van-icon name="send-gift-o"/>场馆</router-link>
+      <router-link class="item" tag="li" to="/ActivePage"><van-icon name="gem-o"/>活动</router-link>
+      <router-link class="item" tag="li" to="/FindPage"><van-icon name="location-o"/>发现</router-link>
+      <router-link class="item" tag="li" to="/UserPage"><van-icon name="friends-o"/>我的</router-link>
+    </ul>
   </div>
 </template>
 
 <script>
-import { Grid, GridItem } from 'vant';
-import $ from 'jquery'
+import $ from 'jquery';
+import { Icon } from 'vant';
 export default {
   components: {
-    "van-grid":Grid,
-    "van-grid-item":GridItem,
+    "van-icon":Icon,
   },
   data:function(){
     return{
@@ -64,34 +39,31 @@ export default {
   display: flex;
   flex-flow:column nowrap;
   height: 100vh;
-  .content{
-    flex: 1;
+  .content-wrap{
+    flex-grow: 1;
     overflow:hidden;
   }
-  .nav-bot{
-    border-top:1Px #e4e4e4 solid;
-    border-bottom:1Px #e4e4e4 solid;
-    flex: 0;
-    height: 114px;
-    .van-grid-item__content{
-      background-color:transparent;
-      padding-top: 6px;
-      padding-bottom: 6px;
-    }
-    .van-grid-item__icon{
-      font-size: 20px;
-    }
-    .van-grid-item__text{
-      margin-top:4px;
-      font-size: 14px;
+  .nav-wrap{
+    flex: 0 0 auto;
+    height: 55px;
+    width: 100%;
+    border-top: 1px #eaeaea solid;
+    display: flex;
+    li{
+      width: 93px;
+      padding-top: 8px;
+      flex: 1;
+      text-align: center;
+      font-size: 13px;
+      line-height: 27px;
+      .van-icon{
+        display: block;
+        font-size: 20px;
+        line-height: 20px;
+      }
     }
     .ac{
-      .van-grid-item__icon{
-        color: #854b98;
-      }
-      .van-grid-item__text{
-        color: #854b98;
-      }
+      color: $main-cl;
     }
   }
 }

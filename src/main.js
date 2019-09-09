@@ -4,9 +4,7 @@ import router from './router'
 import store from './store'
 import 'lib-flexible'
 import './css/base.css'
-import axios from 'axios';
-axios.baseUrl = 'http://127.0.0.1:8000';
-
+import axios from "axios";
 Vue.prototype.$axios = axios;
 
 
