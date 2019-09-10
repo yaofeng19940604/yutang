@@ -41,7 +41,7 @@ export default {
   height: 100vh;
   .content-wrap{
     flex-grow: 1;
-    overflow:hidden;
+    overflow:auto;
   }
   .nav-wrap{
     flex: 0 0 auto;

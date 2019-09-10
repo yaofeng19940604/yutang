@@ -11,6 +11,7 @@ export default new Router({
       {path: "ActivePage", component: ()=>import("./view/ActivePage.vue")},
       {path: "FindPage", component: ()=>import("./view/FindPage.vue")},
       {path: "UserPage", component: ()=>import("./view/UserPage.vue")},
+      {path: "SearchPage", component: ()=>import("./view/SearchPage.vue")},
     ]},
     // {path: "/MenueDetails/:id", component: MenueDetails},
   ]
