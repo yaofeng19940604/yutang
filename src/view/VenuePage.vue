@@ -34,7 +34,8 @@ export default {
       this.typeId = typeid;
     },
     onSearch(){
-      this.$router.push("SearchPage")
+      let searchWords = this.words
+      this.$router.push({name:"SearchPage",params: { words: searchWords }})
     }
   },
   components: {

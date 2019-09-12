@@ -1,7 +1,7 @@
 const path = require('path')
 module.exports = {
   devServer: {
-    proxy: "http://r7ggdy.natappfree.cc/yutang/public/index.php/api/"
+    proxy: "http://jdngv2.natappfree.cc/yutang/public/index.php/api/"
   },
   pluginOptions: {
     'style-resources-loader': {

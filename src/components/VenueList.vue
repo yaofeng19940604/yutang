@@ -1,21 +1,12 @@
 <template>
   <div class="venue-list-wrap">
-    <div class="item" v-for="venue in venuelist" :key="venue.id">
-      <div class="img-wrap">
-        <img src="../assets/images/img_01.jpg">
-      </div>
-      <div class="content">
-        <h5>{{venue.name}}</h5>
-        <h6>{{venue.type_id}}</h6>
-        <p class="address">{{venue.address}}</p>
-        <p class="price">线上预定</p>
-      </div>
-    </div>
+    <VenueItem v-for="venue in venuelist" :key="venue.id" :venue="venue"/>
     <div class="more" @click="getMore">加载更多</div>
   </div>
 </template>
 
 <script>
+import VenueItem from "./VenueItem.vue"
 export default {
   data(){
     return {
@@ -49,7 +40,7 @@ export default {
     }
   },
   components: {
-    
+    VenueItem,
   },
   created(){
     this.getData();
@@ -59,39 +50,9 @@ export default {
   },
 }
 </script>
-<style lang="scss">
+<style lang="scss" scoped>
 .venue-list-wrap{
   padding:0 15px;
-  .item{
-    padding-top: 20px;
-    border-bottom: 1px #dedede solid;
-    display: flex;
-    .img-wrap{
-      width: 100px;
-      margin-right: 15px;
-      flex: 0 0 auto;
-      img{
-        width: 100px;
-      }
-    }
-    .content{
-      flex: 1 1 auto;
-      font-size: 13px;
-      h5{
-        font-size: 16px;
-        line-height: 24px;
-      }
-      h6{
-        line-height: 24px;
-      }
-      .address{
-        line-height: 28px;
-      }
-      .price{
-        line-height: 40px;
-      }
-    }
-  }
   .more{
     text-align: center;
     font-size: 16px;

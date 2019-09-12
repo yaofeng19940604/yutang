@@ -1,11 +1,11 @@
 <template>
-  <div class="venue-item-wrap">
+  <div class="venue-item-wrap" @click="detail(venue.id)">
     <div class="img-wrap">
       <img src="../assets/images/img_01.jpg">
     </div>
     <div class="content">
       <h5>{{venue.name}}</h5>
-      <h6>{{venue.type_id}}</h6>
+      <h6>{{venue.type_name}}</h6>
       <p class="address">{{venue.address}}</p>
       <p class="price">线上预定</p>
     </div>
@@ -21,7 +21,9 @@ export default {
   },
   props:["venue"],
   methods: {
-    
+    detail(id){
+      this.$router.push({name:"DetailPage",params: { id: id }})
+    },
   },
   watch:{
     
@@ -32,12 +34,12 @@ export default {
   created(){
     
   },
-   mounted(){
+  mounted(){
     
   },
 }
 </script>
-<style lang="scss">
+<style lang="scss" scoped>
 .venue-item-wrap{
   padding-top: 20px;
   border-bottom: 1px #dedede solid;
@@ -58,6 +60,7 @@ export default {
       line-height: 24px;
     }
     h6{
+      font-size: 14px;
       line-height: 24px;
     }
     .address{

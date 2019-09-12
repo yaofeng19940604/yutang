@@ -2,10 +2,10 @@
   <div id="index-wrap">
     <router-view  class="content-wrap"></router-view>
     <ul class="nav-wrap">
-      <router-link class="item ac" tag="li" to="/"><van-icon name="send-gift-o"/>场馆</router-link>
-      <router-link class="item" tag="li" to="/ActivePage"><van-icon name="gem-o"/>活动</router-link>
-      <router-link class="item" tag="li" to="/FindPage"><van-icon name="location-o"/>发现</router-link>
-      <router-link class="item" tag="li" to="/UserPage"><van-icon name="friends-o"/>我的</router-link>
+      <router-link class="item ac" tag="li" to="/home"><van-icon name="send-gift-o"/>场馆</router-link>
+      <router-link class="item" tag="li" to="/home/ActivePage"><van-icon name="gem-o"/>活动</router-link>
+      <router-link class="item" tag="li" to="/home/FindPage"><van-icon name="location-o"/>发现</router-link>
+      <router-link class="item" tag="li" to="/home/UserPage"><van-icon name="friends-o"/>我的</router-link>
     </ul>
   </div>
 </template>

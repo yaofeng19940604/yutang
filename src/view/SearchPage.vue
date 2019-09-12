@@ -45,23 +45,26 @@ export default {
     "van-search":Search,
     VenueItem,
   },
+  created(){
+    this.words = this.$route.params.words;
+    this.onSearch();
+  }
 }
 </script>
-<style lang="scss">
-.search-page-wrap{
-  .search-wrap{
-    padding-top: 50px;
-    .header{
-      width: 100%;
-      position:fixed;
-      top: 0;
-      left: 0;
-      z-index: 100;
-      background-color: $main-bc;
-      .van-search__action{
-        color: #fff;
-      }
+<style lang="scss" scoped>
+.search-wrap{
+  padding-top: 50px;
+  .header{
+    width: 100%;
+    position:fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    background-color: $main-bc;
+    .van-search__action{
+      color: #fff;
     }
   }
 }
+
 </style>
